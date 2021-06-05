@@ -1,6 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from twitteruser.models import TwitterUser
 from tweet.models import Tweet
+from django.contrib.auth.decorators import login_required
+@login_required
 def user_view(request, user_name: str=""):
   if user_name == "" or user_name == request.user.username:
     if request.user:
