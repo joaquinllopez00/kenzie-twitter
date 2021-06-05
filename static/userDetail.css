@@ -1,0 +1,22 @@
+.user-detail__container {
+  background-color: #fafafa;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logout__container {
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.logout__container:hover {
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: rgb(191, 191, 191);
+}

@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 2rem;
+  background-color: white;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin: 0.5rem 0rem;
+  background-color: #fafafa;
+  outline: none;
+}
+
+#submit {
+  width: 20%;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: rgb(5, 89, 193);
+  color: white;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 50vw;
+  align-items: center;
+}

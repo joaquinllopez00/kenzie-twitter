@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    {% include "nav.html" %}
+    <main>
+      <section id="hello_message">
+        <h1>Welcome back <em>{{user.username}},</em></h1>
+        <h2 id="submessage">you have 3 notifications waiting for you</h2>
+      </section>
+      <section id="dashboard">
+        <div id="dash__container">
+          <h1><b>Dashboard</b></h1>
+          {% for tweet in tweets %}
+          <div class="tweet">
+            <a href="user/{{tweet.tweeter.username}}">{{tweet.tweeter.username}}</a>
+            <p>{{tweet.content}}</p>
+            <a href="/tweet/{{note.content.id}}">View Tweet</a>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

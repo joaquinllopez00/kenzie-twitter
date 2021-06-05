@@ -1,0 +1,52 @@
+body {
+  padding: none;
+  margin: none;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+
+#hello_message {
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  margin: 50px 0px;
+}
+
+#submessage {
+  position: relative;
+  bottom: 0;
+}
+
+#dash__container {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  border: 1px solid lightblue;
+  position: relative;
+}
+
+#dash__container h1 {
+  font-size: 2rem;
+  background-color: white;
+  position: absolute;
+  top: -48px;
+  left: 3px;
+  width: 20vw;
+}
+
+.tweet {
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid lightblue;
+}
+
+.notification__container {
+  margin: 1rem;
+}

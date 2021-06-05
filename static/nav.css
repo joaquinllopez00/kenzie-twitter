@@ -1,0 +1,29 @@
+img {
+  width: 8vh;
+  height: auto;
+  position: absolute;
+  left: 12px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgb(5, 89, 193);
+  min-height: 6vh;
+}
+
+ul {
+  display: flex;
+  margin: 10px 0;
+  width: 500px;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+a {
+  font-family: "Raleway", sans-serif;
+  outline: none;
+  text-decoration: none;
+  color: rgb(5, 89, 193);
+}
