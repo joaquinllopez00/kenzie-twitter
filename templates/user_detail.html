@@ -28,13 +28,15 @@
         </div>
         {% endif %}
       </div>
-      {% for tweet in tweets %}
-      <div class="tweet">
-        <h2>{{tweet.tweeter.username}}</h2>
-        <p>{{tweet.content}}</p>
-        <a href="/tweet/{{tweet.id}}">View Tweet</a>
+      <div id="dash__container">
+        {% for tweet in tweets %}
+        <div class="tweet">
+          <h2>{{tweet.tweeter.username}}</h2>
+          <p>{{tweet.content}}</p>
+          <a href="/tweet/{{tweet.id}}">View Tweet</a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </main>
   </body>
 </html>

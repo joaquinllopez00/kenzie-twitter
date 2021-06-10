@@ -8,7 +8,7 @@ img {
 nav {
   display: flex;
   justify-content: flex-end;
-  border-bottom: 1px solid rgb(5, 89, 193);
+  border-bottom: 1px solid rgb(76, 175, 208);
   min-height: 6vh;
 }
 
