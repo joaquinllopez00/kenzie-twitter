@@ -9,11 +9,14 @@ def user_view(request, user_name: str=""):
     if request.user:
       user = request.user
       tweets = Tweet.objects.filter(tweeter=user)
+      count = tweets.count()
+      print(count)
     else:
       return HttpResponseRedirect("/login")
-    return render(request, 'user_detail.html', {'user': user, 'tweets': tweets, "userpage": True})
+    return render(request, 'user_detail.html', {'user': user, 'tweets': tweets, 'count': count, "userpage": True})
   user = TwitterUser.objects.get(username=user_name)
   tweets = Tweet.objects.filter(tweeter=user)
+  count = tweets.count()
   followees = user.followees.all()
   # follow = TwitterUser.objects.filter(followees =user)
   if request.user in followees:
@@ -21,8 +24,9 @@ def user_view(request, user_name: str=""):
     follow = True
   else:
     follow = False
-  print(followees, follow, request.user)
-  return render(request, "user_detail.html", {'user': user, 'tweets': tweets, 'follow': follow, "userpage": False}, )
+  
+  print(followees, follow, request.user, count)
+  return render(request, "user_detail.html", {'user': user, 'tweets': tweets, 'count': count,'follow': follow, "userpage": False}, )
 
 
 def follow_user(request, followed_user:int):

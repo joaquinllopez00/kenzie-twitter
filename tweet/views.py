@@ -24,9 +24,9 @@ def index(request):
       tweets += chain(Tweet.objects.filter(tweeter=u))
       print(tweets)
       
-    # fin_tweets = sorted(tweets, key= lambda x: tweet.id)
+  fin_tweets = sorted(tweets, key= lambda tweet: tweet.created_date)
   # print(user_tweets, "tweets", user.followees, "user", tweets, "tweets")
-  return render(request, 'index.html', {'user': user, 'tweets': tweets})
+  return render(request, 'index.html', {'user': user, 'tweets': fin_tweets[::-1]})
 
 
 @login_required
