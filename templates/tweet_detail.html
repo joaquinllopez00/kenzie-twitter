@@ -13,10 +13,10 @@
     {% include "nav.html" %}
     <main>
       <div class="tweet__container">
-        <span><a href="/user/{{tweet.tweeter.username}}">{{tweet.tweeter}}</a></span>
+        <span><a href="/user/{{tweet.tweeter.username}}/">{{tweet.tweeter}}</a></span>
         <div>
           <p>{{tweet.content}}</p>
-          <a href="/tweet/{{tweet.id}}">View Tweet</a>
+          <a href="/tweet/{{tweet.id}}/">View Tweet</a>
         </div>
       </div>
     </main>

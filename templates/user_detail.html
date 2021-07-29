@@ -16,10 +16,12 @@
         <div class="user-info__container">
           <h1>{{user.username}}</h1>
           <p>Followers: {{user.followees.count}}</p>
+
+          <p>Following: {{following}}</p>
           {% if not userpage %} {% if not follow %}
-          <a href="/follow/{{user.id}}">Follow</a>
+          <a href="/follow/{{user.id}}/">Follow</a>
           {% else %}
-          <a href="/unfollow/{{user.id}}">Unfollow</a>
+          <a href="/unfollow/{{user.id}}/">Unfollow</a>
           {% endif %} {% endif %}
           <p>{{count}} tweets</p>
         </div>

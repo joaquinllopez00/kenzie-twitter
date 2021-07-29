@@ -5,6 +5,11 @@ from tweet.models import Tweet
 from django.contrib.auth.decorators import login_required
 @login_required
 def user_view(request, user_name: str=""):
+  following = 0
+  for user in TwitterUser.objects.all():
+    if request.user in user.followees.all():
+      following += 1
+  print(following)
   if user_name == "" or user_name == request.user.username:
     if request.user:
       user = request.user
@@ -13,7 +18,7 @@ def user_view(request, user_name: str=""):
       print(count)
     else:
       return HttpResponseRedirect("/login")
-    return render(request, 'user_detail.html', {'user': user, 'tweets': tweets, 'count': count, "userpage": True})
+    return render(request, 'user_detail.html', {'user': user, 'tweets': tweets, 'count': count, "userpage": True, "following": following})
   user = TwitterUser.objects.get(username=user_name)
   tweets = Tweet.objects.filter(tweeter=user)
   count = tweets.count()
@@ -26,7 +31,7 @@ def user_view(request, user_name: str=""):
     follow = False
   
   print(followees, follow, request.user, count)
-  return render(request, "user_detail.html", {'user': user, 'tweets': tweets, 'count': count,'follow': follow, "userpage": False}, )
+  return render(request, "user_detail.html", {'user': user, 'tweets': tweets, 'count': count,'follow': follow, "userpage": False, "following": following}, )
 
 
 def follow_user(request, followed_user:int):
